@@ -1,0 +1,6 @@
+{
+  "extends": "8select-node",
+  "rules": {
+    "require-jsdoc": "off"
+  }
+}
