@@ -1,0 +1,19 @@
+{
+  "name": "serverless-plugin-api-docs",
+  "version": "1.0.0",
+  "description": "serverless plugin that generates docs function to return swagger ui",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/8select/serverless-plugin-api-docs.git"
+  },
+  "author": "8select Software GmbH",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/8select/serverless-plugin-api-docs/issues"
+  },
+  "homepage": "https://github.com/8select/serverless-plugin-api-docs#readme"
+}
