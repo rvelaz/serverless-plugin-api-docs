@@ -3,7 +3,7 @@ A serverless plugin to **automatically** create a lambda function which returns 
 
 ## Install
 using NPM
-`npm install --save-dev serverless-plugin-api-docs`
+`npm install --save-dev 8select/serverless-plugin-api-docs`
 
 Add the plugin to your `serverless.yml` file:
 
