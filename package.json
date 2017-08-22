@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/8select/serverless-plugin-api-docs/issues"
   },
-  "homepage": "https://github.com/8select/serverless-plugin-api-docs#readme"
+  "homepage": "https://github.com/8select/serverless-plugin-api-docs#readme",
+  "devDependencies": {
+    "eslint": "^4.5.0",
+    "eslint-config-8select-node": "github:8select/eslint-config-8select-node"
+  }
 }
