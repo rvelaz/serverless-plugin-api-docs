@@ -8,17 +8,18 @@ class ServerlessPlugin {
     this.config = this.serverless.service.custom.documentation
 
     this.hooks = {
-      'before:package:createDeploymentArtifacts': this.createDocs.bind(this)
+      'before:deploy:initialize': this.createDocs.bind(this)
     }
   }
 
   createDocs () {
     const name = `${this.serverless.service.serviceObject.name}-${this.options.stage}-docs`
-
-    const includePath = 'node_modules/serverless-plugin-api-docs/docs.js'
+    const handlerPath = 'node_modules/serverless-plugin-api-docs/docs.js'
+    const functionName = 'docs'
 
     const docsFunction = {
-      docs: {
+      [functionName]: {
+        name,
         memorySize: 128,
         timeout: 60,
         handler: 'node_modules/serverless-plugin-api-docs/docs.handler',
@@ -33,11 +34,10 @@ class ServerlessPlugin {
         ],
         package: {
           include: [
-            includePath,
+            handlerPath,
             this.config.path
           ]
         },
-        name,
         environment: {
           PATH_TO_SWAGGER_SPEC: this.config.path,
           CONTENT_URL: this.config.contentUrl,
@@ -62,7 +62,7 @@ class ServerlessPlugin {
       docsFunction
     )
 
-    this.serverless.cli.log('GET /docs function successfull added')
+    this.serverless.cli.log(`GET /${functionName} function successfull added`)
   }
 }
 
