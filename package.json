@@ -4,6 +4,7 @@
   "description": "serverless plugin that generates docs function to return swagger ui",
   "main": "index.js",
   "scripts": {
+    "precommit": "lint-staged",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,6 +19,16 @@
   "homepage": "https://github.com/8select/serverless-plugin-api-docs#readme",
   "devDependencies": {
     "eslint": "^4.5.0",
-    "eslint-config-8select-node": "github:8select/eslint-config-8select-node"
+    "eslint-config-8select-node": "github:8select/eslint-config-8select-node",
+    "husky": "^0.14.3",
+    "lint-staged": "^4.0.3",
+    "prettier": "^1.5.3"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --print-width 120 --no-semi --single-quote --write",
+      "eslint --fix",
+      "git add"
+    ]
   }
 }
