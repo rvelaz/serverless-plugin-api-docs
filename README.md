@@ -7,6 +7,7 @@ A [serverless](http://www.serverless.com) plugin to **automatically** create a l
 
 ## Install
 using NPM
+
 `npm install --save-dev 8select/serverless-plugin-api-docs`
 
 Add the plugin to your `serverless.yml` file:
