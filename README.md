@@ -1,5 +1,9 @@
 # serverless-plugin-api-docs
-A serverless plugin to **automatically** create a lambda function which returns the swagger-ui HTML based on the given swagger spec JSON file `GET /docs` => swagger-ui
+[![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)
+
+Work with [SWAGGER](https://swagger.io/docs/specification) documentation for [Serverless v1.0](https://serverless.com/) projects.
+
+A [serverless](http://www.serverless.com) plugin to **automatically** create a lambda function which returns the swagger-ui HTML based on the given swagger spec JSON file `GET /docs` => swagger-ui
 
 ## Install
 using NPM
@@ -12,11 +16,18 @@ plugins:
   - serverless-plugin-api-docs
 ```
 
+## Prerequisites
+[Download](https://swagger.io/swagger-ui/) and host swagger-ui library files e.g. with S3
+  * swagger-ui.css
+  * swagger-ui-bundle.js
+  * swagger-ui-standalone-preset.js
+
 ## Configuration
 
 ```yaml
 custom:
   documentation:
-    path: 'path/to/swagger.json'
-    contentUrl: '<URL_TO_YOUR_HOSTED_SWAGGER_UI_JS_FILES>'
+    path: 'path/to/swagger.json' # REQUIRED
+    contentUrl: '<URL_TO_YOUR_HOSTED_SWAGGER_UI_FILES>' # REQUIRED
+    name: '<your_custom_lambda_function_name>' # OPTIONAL - default = 'docs'
 ```
