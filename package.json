@@ -21,8 +21,8 @@
     "eslint": "^4.5.0",
     "eslint-config-8select-node": "github:8select/eslint-config-8select-node",
     "husky": "^0.14.3",
-    "lint-staged": "^4.0.3",
-    "prettier": "^1.5.3"
+    "lint-staged": "^4.0.4",
+    "prettier": "^1.6.0"
   },
   "lint-staged": {
     "*.js": [
