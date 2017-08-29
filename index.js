@@ -1,12 +1,6 @@
 'use strict'
 
-/** Serverless API docs Plugin */
 class ServerlessPlugin {
-  /**
-   * Create serverless API docs plugin.
-   * @param {Object} serverless - the parsed serverless configuration.
-   * @param {Object} options - the passed in enviorment arguments.
-   */
   constructor (serverless, options) {
     this.serverless = serverless
     this.options = options
@@ -18,10 +12,6 @@ class ServerlessPlugin {
     }
   }
 
-  /**
-   * Add an additional lambda function to serve swagger-ui
-   * the function name based on given custom configuration name
-   */
   createDocs () {
     const name = `${this.serverless.service.serviceObject.name}-${this.options.stage}-docs`
     const handlerPath = 'node_modules/serverless-plugin-api-docs/docs.js'

@@ -12,12 +12,6 @@ const swaggerSpec = Object.assign(
   }
 )
 
-/**
- * Lambda function to respond with swagger-ui API documentation
- * @param {Object} event - The lambda event.
- * @param {Object} context - The lambda context.
- * @param {Function} callback - The lambda callback.
- */
 function handler (event, context, callback) {
   callback(null, {
     headers: {
@@ -33,15 +27,6 @@ function handler (event, context, callback) {
 
 module.exports.handler = handler
 
-/**
- * Helper to include swagger spec + swagger-ui content PATHs
- * to return swagger-ui static HTML
- * @param {Object} config - {
- *   contentUrl - URL to the swagger-ui libs
- *   swaggerSpec - given swagger spec
- * }
- * @return {String} static swagger-ui HTML with swagger spec included
- */
 const getHtmlDocumentation = ({ contentUrl, swaggerSpec }) => `
   <!doctype html>
   <html lang="en">
