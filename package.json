@@ -1,5 +1,5 @@
 {
-  "name": "serverless-plugin-api-docs",
+  "name": "@8select/serverless-plugin-api-docs",
   "version": "1.0.0",
   "description": "serverless plugin that generates docs function to return swagger ui",
   "main": "index.js",
