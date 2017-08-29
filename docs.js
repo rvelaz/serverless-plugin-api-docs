@@ -139,4 +139,4 @@ const getHtmlDocumentation = ({ contentUrl, swaggerSpec }) => `
 
   </body>
   </html>
-  `
+`
