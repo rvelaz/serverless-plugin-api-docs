@@ -17,6 +17,7 @@
   ],
   "scripts": {
     "precommit": "lint-staged",
+    "changelog": "github-changes -o 8select -r serverless-plugin-api-docs -a --only-pulls --use-commit-body",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -32,6 +33,7 @@
   "devDependencies": {
     "eslint": "^4.5.0",
     "eslint-config-8select-node": "github:8select/eslint-config-8select-node",
+    "github-changes": "^1.1.0",
     "husky": "^0.14.3",
     "lint-staged": "^4.0.4",
     "prettier": "^1.6.0"
