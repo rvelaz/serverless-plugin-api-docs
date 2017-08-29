@@ -3,6 +3,12 @@
   "version": "1.0.0",
   "description": "serverless plugin that generates docs function to return swagger ui",
   "main": "index.js",
+  "files": [
+    "index.js",
+    "docs.js",
+    "LICENSE",
+    "README.md"
+  ],
   "scripts": {
     "precommit": "lint-staged",
     "test": "echo \"Error: no test specified\" && exit 1"
