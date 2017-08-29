@@ -9,6 +9,12 @@
     "LICENSE",
     "README.md"
   ],
+  "keywords": [
+    "8select",
+    "javascript",
+    "serverless",
+    "docs"
+  ],
   "scripts": {
     "precommit": "lint-staged",
     "test": "echo \"Error: no test specified\" && exit 1"
