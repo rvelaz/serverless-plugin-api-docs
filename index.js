@@ -1,5 +1,7 @@
 'use strict'
 
+const packagePath = 'node_modules/@8select/serverless-plugin-api-docs'
+
 class ServerlessPlugin {
   constructor (serverless, options) {
     this.serverless = serverless
@@ -14,7 +16,7 @@ class ServerlessPlugin {
 
   createDocs () {
     const name = `${this.serverless.service.serviceObject.name}-${this.options.stage}-docs`
-    const handlerPath = 'node_modules/@8select/serverless-plugin-api-docs/docs.js'
+    const handlerPath = `${packagePath}/docs.js`
     const functionName = this.config.name || 'docs'
 
     const docsFunction = {
@@ -22,7 +24,7 @@ class ServerlessPlugin {
         name,
         memorySize: 128,
         timeout: 60,
-        handler: 'node_modules/serverless-plugin-api-docs/docs.handler',
+        handler: `${packagePath}/docs.handler`,
         events: [
           {
             http: {
