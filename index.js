@@ -14,7 +14,7 @@ class ServerlessPlugin {
 
   createDocs () {
     const name = `${this.serverless.service.serviceObject.name}-${this.options.stage}-docs`
-    const handlerPath = 'node_modules/serverless-plugin-api-docs/docs.js'
+    const handlerPath = 'node_modules/@8select/serverless-plugin-api-docs/docs.js'
     const functionName = this.config.name || 'docs'
 
     const docsFunction = {
