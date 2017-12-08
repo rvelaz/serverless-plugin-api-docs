@@ -46,7 +46,7 @@ class ServerlessPlugin {
                 {
                   Ref: 'ApiGatewayRestApi',
                 },
-                '.execute-api.eu-central-1.amazonaws.com/',
+                `.execute-api.${this.serverless.service.provider.region}.amazonaws.com/`,
               ],
             ],
           },
