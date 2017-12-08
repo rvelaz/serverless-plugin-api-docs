@@ -1,6 +1,6 @@
 {
   "name": "@8select/serverless-plugin-api-docs",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "serverless plugin that generates docs function to return swagger ui",
   "main": "index.js",
   "files": ["index.js", "docs.js", "LICENSE", "README.md"],
