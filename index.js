@@ -10,7 +10,7 @@ class ServerlessPlugin {
     this.config = this.serverless.service.custom.documentation
 
     this.hooks = {
-      'before:deploy:initialize': this.createDocs.bind(this),
+      'package:initialize': this.createDocs.bind(this),
     }
   }
 
