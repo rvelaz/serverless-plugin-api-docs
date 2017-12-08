@@ -35,10 +35,9 @@ class ServerlessPlugin {
           },
         ],
         package: {
-          include: [handlerPath, this.config.path],
+          include: [handlerPath],
         },
         environment: {
-          PATH_TO_SWAGGER_SPEC: this.config.path,
           CONTENT_URL: this.config.contentUrl,
           HOST_URL: {
             'Fn::Join': [

@@ -1,9 +1,9 @@
 const HOST_URL = process.env.HOST_URL
 const CONTENT_URL = process.env.CONTENT_URL
-const PATH_TO_SWAGGER_SPEC = process.env.PATH_TO_SWAGGER_SPEC
 
-// docs is included in /node_modules/@8select/serverless-plugin-api-docs we need to go down to the relative project path
-const swaggerJSON = require(`../../../${PATH_TO_SWAGGER_SPEC}`)
+// PATH_TO_SWAGGER_SPEC needs to be added as an alias
+// eslint-disable-next-line require-path-exists/exists
+const swaggerJSON = require('PATH_TO_SWAGGER_SPEC')
 const swaggerSpec = Object.assign(
   swaggerJSON,
   {},
