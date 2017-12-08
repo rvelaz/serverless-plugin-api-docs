@@ -10,7 +10,7 @@ class ServerlessPlugin {
     this.config = this.serverless.service.custom.documentation
 
     this.hooks = {
-      'before:deploy:initialize': this.createDocs.bind(this),
+      'package:initialize': this.createDocs.bind(this),
     }
   }
 
@@ -23,7 +23,7 @@ class ServerlessPlugin {
       [functionName]: {
         name,
         memorySize: 128,
-        timeout: 60,
+        timeout: 30,
         handler: `${packagePath}/docs.handler`,
         events: [
           {
@@ -46,7 +46,7 @@ class ServerlessPlugin {
                 {
                   Ref: 'ApiGatewayRestApi',
                 },
-                '.execute-api.eu-central-1.amazonaws.com/',
+                `.execute-api.${this.serverless.service.provider.region}.amazonaws.com/`,
               ],
             ],
           },
