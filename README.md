@@ -6,9 +6,14 @@ Work with [SWAGGER](https://swagger.io/docs/specification) documentation for [Se
 A [serverless](http://www.serverless.com) plugin to **automatically** create a lambda function which returns the swagger-ui HTML based on the given swagger spec JSON file `GET /docs` => swagger-ui
 
 ## Install
-using NPM
-
-`npm install --save-dev 8select/serverless-plugin-api-docs`
+using `npm`: 
+```
+npm install --save-dev @8select/serverless-plugin-api-docs
+```
+or `yarn`:
+```
+yarn add -D @8select/serverless-plugin-api-docs
+```
 
 Add the plugin to your `serverless.yml` file:
 
