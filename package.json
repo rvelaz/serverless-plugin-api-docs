@@ -3,18 +3,8 @@
   "version": "1.0.2",
   "description": "serverless plugin that generates docs function to return swagger ui",
   "main": "index.js",
-  "files": [
-    "index.js",
-    "docs.js",
-    "LICENSE",
-    "README.md"
-  ],
-  "keywords": [
-    "8select",
-    "javascript",
-    "serverless",
-    "docs"
-  ],
+  "files": ["index.js", "docs.js", "LICENSE", "README.md"],
+  "keywords": ["8select", "javascript", "serverless", "docs"],
   "scripts": {
     "precommit": "lint-staged",
     "changelog": "github-changes -o 8select -r serverless-plugin-api-docs -a --only-pulls --use-commit-body",
@@ -32,17 +22,10 @@
   "homepage": "https://github.com/8select/serverless-plugin-api-docs#readme",
   "devDependencies": {
     "eslint": "^4.5.0",
-    "eslint-config-8select-node": "github:8select/eslint-config-8select-node",
+    "eslint-config-8select": "^1.0.0",
     "github-changes": "^1.1.0",
     "husky": "^0.14.3",
     "lint-staged": "^4.0.4",
     "prettier": "^1.6.0"
-  },
-  "lint-staged": {
-    "*.js": [
-      "prettier --print-width 120 --no-semi --single-quote --write",
-      "eslint --fix",
-      "git add"
-    ]
   }
 }
