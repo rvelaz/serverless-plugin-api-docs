@@ -23,7 +23,7 @@ class ServerlessPlugin {
       [functionName]: {
         name,
         memorySize: 128,
-        timeout: 60,
+        timeout: 30,
         handler: `${packagePath}/docs.handler`,
         events: [
           {
