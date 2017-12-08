@@ -3,18 +3,18 @@
 const packagePath = 'node_modules/@8select/serverless-plugin-api-docs'
 
 class ServerlessPlugin {
-  constructor (serverless, options) {
+  constructor(serverless, options) {
     this.serverless = serverless
     this.options = options
 
     this.config = this.serverless.service.custom.documentation
 
     this.hooks = {
-      'before:deploy:initialize': this.createDocs.bind(this)
+      'before:deploy:initialize': this.createDocs.bind(this),
     }
   }
 
-  createDocs () {
+  createDocs() {
     const name = `${this.serverless.service.serviceObject.name}-${this.options.stage}-docs`
     const handlerPath = `${packagePath}/docs.js`
     const functionName = this.config.name || 'docs'
@@ -30,12 +30,12 @@ class ServerlessPlugin {
             http: {
               method: 'GET',
               path: 'docs',
-              cors: true
-            }
-          }
+              cors: true,
+            },
+          },
         ],
         package: {
-          include: [ handlerPath, this.config.path ]
+          include: [handlerPath, this.config.path],
         },
         environment: {
           PATH_TO_SWAGGER_SPEC: this.config.path,
@@ -45,14 +45,14 @@ class ServerlessPlugin {
               '',
               [
                 {
-                  Ref: 'ApiGatewayRestApi'
+                  Ref: 'ApiGatewayRestApi',
                 },
-                '.execute-api.eu-central-1.amazonaws.com/'
-              ]
-            ]
-          }
-        }
-      }
+                '.execute-api.eu-central-1.amazonaws.com/',
+              ],
+            ],
+          },
+        },
+      },
     }
 
     this.serverless.service.functions = Object.assign(this.serverless.service.functions, {}, docsFunction)
