@@ -45,6 +45,18 @@ custom:
     contentUrl: '<URL_TO_YOUR_HOSTED_SWAGGER_UI_FILES>' # REQUIRED
     name: '<your_custom_lambda_function_name>' # OPTIONAL - default = 'docs'
 ```
+### Authorizer
+
+If you are using AWS as a provider, you can define an authorizer for the docs function.
+
+```yaml
+custom:
+  documentation:
+    authorizer:
+      name: 'authorizer name' # REQUIRED
+      arn: '<ARN_OF_THE_AUTORIZER>' # REQUIRED. e.g. arn:aws:cognito-idp:us-east-1:1233:userpool/us-east-1_1
+```
+
 
 To load your `swagger.json` you need to add a `resolve.alias`.  
 E.g. for `webpack`:  

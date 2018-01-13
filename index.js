@@ -18,6 +18,7 @@ class ServerlessPlugin {
     const name = `${this.serverless.service.serviceObject.name}-${this.options.stage}-docs`
     const handlerPath = `${packagePath}/docs.js`
     const functionName = this.config.name || 'docs'
+    const authorizer = this.config.authorizer
 
     const docsFunction = {
       [functionName]: {
@@ -52,6 +53,13 @@ class ServerlessPlugin {
           },
         },
       },
+    }
+
+    if (authorizer) {
+      docsFunction.docs.events[0].http.authorizer = {
+        name: authorizer.name,
+        arn: authorizer.arn
+      }
     }
 
     this.serverless.service.functions = Object.assign(this.serverless.service.functions, {}, docsFunction)
